@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sem2_gr02;
 
 /**
- *
- * @author Ahlquist
+ * Semesterprojekt 2. semester 2014
+ * Casablanca Holiday Center
+ * Emil, Anders, Søren og Laura
  */
+
 public class SEM2_GR02
 {
 
