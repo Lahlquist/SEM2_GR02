@@ -316,7 +316,7 @@ public class GUI extends javax.swing.JFrame
     private void jButtonGetGuestListActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonGetGuestListActionPerformed
     {//GEN-HEADEREND:event_jButtonGetGuestListActionPerformed
         
-
+        jLabelInfoOversigt.setText("Oversigt hentet!");
         DefaultTableModel Gæsteliste =(DefaultTableModel)GæsteListen.getModel();
         List<Gæst> gæsteListe = c.getGæsteListe();
         for(Gæst g : gæsteListe)
@@ -343,12 +343,14 @@ public class GUI extends javax.swing.JFrame
 
     private void jButtonBekræftBookingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonBekræftBookingActionPerformed
     {//GEN-HEADEREND:event_jButtonBekræftBookingActionPerformed
-     jTextFieldFornavn.getText();
-     jTextFieldEfternavn.getText();
-     jTextFieldLand.getText();
-     jTextFieldEmail.getText();
-     jTextFieldTelefonnummer.getText();
-     jTextfieldAntalnætter.getText();
+     int tlfno = Integer.parseInt(jTextFieldTelefonnummer.getText());
+     int antnæ = Integer.parseInt(jTextfieldAntalnætter.getText());
+//     jTextFieldFornavn.getText();
+//     jTextFieldEfternavn.getText();
+//     jTextFieldLand.getText();
+//     jTextFieldEmail.getText();
+//     jTextfieldAntalnætter.getText();
+     Gæst g = c.createNewBooking(12, 13, jTextFieldFornavn.getText(), jTextFieldEfternavn.getText(), jTextFieldLand.getText(), tlfno, jTextFieldEmail.getText(), null, null, antnæ);
     }//GEN-LAST:event_jButtonBekræftBookingActionPerformed
 
     private void jTextFieldFornavnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextFieldFornavnActionPerformed

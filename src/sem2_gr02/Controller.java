@@ -16,12 +16,12 @@ public class Controller
 
     DBFacade facade = new DBFacade();
     private List<Gæst> currentgListe;
-    private Booking booking;
+    private Gæst gæst;
 
     public Controller()
     {
         currentgListe = null;
-        booking = null;
+        gæst = null;
     }
 
     public List<Gæst> getGæsteListe()
@@ -30,15 +30,15 @@ public class Controller
         return currentgListe;
     }
 
-    public Booking createNewBooking(String fnavn, String enavn, String land, String email, int tlfno, int nætter)
+    public Gæst createNewBooking(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkda, int antnæ)
     {
-        booking = new Booking(0, fnavn, enavn, land, email, tlfno, nætter);
-        boolean status = facade.createNewBooking(booking);
+        gæst = new Gæst (gæid,boid,fnavn, enavn,land,telnu,eail,rbu,checkda, antnæ);
+        boolean status = facade.createNewBooking(gæst);
         if (!status);
         {
-            booking = null;
+            gæst = null;
         }
-        return booking;
+        return gæst;
     }
 //    public String getGæsteListeToString() {
 //    if (currentgListe != null) {
