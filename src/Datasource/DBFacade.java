@@ -21,6 +21,11 @@ public class DBFacade
     {
         return mapp.getGæster();
     }
+    
+    public boolean createNewBooking(Gæst g)
+    {
+        return mapp.createNewBooking(g);
+    }
 //    
 //    public Gæst getGæst()
 //    {

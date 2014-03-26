@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import sem2_gr02.Booking;
 
 
 import sem2_gr02.Gæst;
@@ -73,5 +74,46 @@ public class Mapper
     }
        return gæsteListe;
    }
+
+    boolean createNewBooking(Gæst g)
+    {
+        int rowsInserted = 0;
+        String SQLStringGæst = "insert into GAEST_TBL " +
+                           " values (?,?,?,?,?,?,?,?,?,?)";
+        String SQLStringLejlighed = "insert into LEJLIGHED_TBL " +
+                            " values (?,?,?)";
+        PreparedStatement statement = null; 
+        try {
+            statement = con.prepareStatement(SQLStringGæst);
+            statement.setString(1, g.getFornavn());
+            statement.setString(2, g.getEfternavn());
+            statement.setString(3, g.getLand());
+            statement.setInt(4, g.getTelefonnummer());
+            statement.setString(5, g.getRejsebureau());
+            statement.setInt(6, g.getBookingid());
+            statement.setInt(7,g.getGæstid());
+            statement.setInt(8, g.getNætter());
+            statement.setString(9,g.getEmail());
+            statement.setString(10, g.getCheckin());
+            rowsInserted = statement.executeUpdate();
+            
+            statement = con.prepareStatement(SQLStringLejlighed);
+            statement.set
+                   
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Fejler i mapper - Create New Booking");
+        }finally
+        {
+            try
+            {
+                statement.close();
+            }catch (SQLException e){
+                System.out.println("Fejler i mapper - Create New booking");
+            }
+        }
+        return rowsInserted == 1;
+    }
 
 }
