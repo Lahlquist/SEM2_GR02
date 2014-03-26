@@ -30,9 +30,9 @@ public class Controller
         return currentgListe;
     }
 
-    public Gæst createNewBooking(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkda, int antnæ)
+    public Gæst createNewBooking(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkind,String checkud, int antnæ)
     {
-        gæst = new Gæst (gæid,boid,fnavn, enavn,land,telnu,eail,rbu,checkda, antnæ);
+        gæst = new Gæst (123456,321654,fnavn, enavn,land,telnu,eail,rbu,checkind,checkud, antnæ);
         boolean status = facade.createNewBooking(gæst);
         if (!status);
         {

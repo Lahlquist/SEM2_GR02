@@ -52,9 +52,10 @@ public class Mapper
                 int telnu = rs.getInt("TELEFONNUMMER");
                 String email = rs.getString("E_MAIL");
                 String rbu = rs.getString("REJSEBUREAU");
-                String checkda = rs.getString("CHECK_IN_DATO");
+                String checkind = rs.getString("CHECK_IN_DATO");
+                String checkud = rs.getString("CHECK_OUT_DATO");
                 int antnæ = rs.getInt("ANTAL_NAETTER");
-                gæsteListe.add(new Gæst(gæid, boid, fnavn, enavn, land, telnu, email, rbu, checkda, antnæ));
+                gæsteListe.add(new Gæst(gæid, boid, fnavn, enavn, land, telnu, email, rbu, checkind, checkud, antnæ));
 //          Gæsteliste.addRow(new Object[]{t1,t2,t3,t4,t5,t6,t7,t8,t9,t10});
 
             }
@@ -85,23 +86,24 @@ public class Mapper
     {
         int rowsInserted = 0;
         String SQLStringGæst = "insert into GAEST_TBL "
-                + " values (?,?,?,?,?,?)";
+                + " values (?,?,?,?,?,?,?,?,?,?,?);";
 //        String SQLStringLejlighed = "insert into LEJLIGHED_TBL "
 //                + " values (?,?,?)";
         PreparedStatement statement = null;
         try
         {
             statement = con.prepareStatement(SQLStringGæst);
-            statement.setString(1, g.getFornavn());
-            statement.setString(2, g.getEfternavn());
-            statement.setString(3, g.getLand());
-            statement.setInt(4, g.getTelefonnummer());
-//            statement.setString(5, g.getRejsebureau());
-//            statement.setInt(6, g.getBookingid());
-//            statement.setInt(7, g.getGæstid());
-            statement.setInt(5, g.getNætter());
-            statement.setString(6, g.getEmail());
-//            statement.setString(10, g.getCheckin());
+            statement.setInt(1, 213322);
+            statement.setInt(2, 453123);
+            statement.setString(3, g.getFornavn());
+            statement.setString(4, g.getEfternavn());
+            statement.setString(5, g.getLand());
+            statement.setInt(6, g.getTelefonnummer());
+            statement.setString(7, g.getEmail());
+            statement.setString(8, "wer");
+            statement.setDate(9, null);
+            statement.setDate(10, null);
+            statement.setInt(11, g.getNætter());
             rowsInserted = statement.executeUpdate();
 
 //            statement = con.prepareStatement(SQLStringLejlighed);

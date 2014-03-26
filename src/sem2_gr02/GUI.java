@@ -101,13 +101,13 @@ public class GUI extends javax.swing.JFrame
             },
             new String []
             {
-                "GæstID", "BookingID", "Fornavn(e)", "Efternavn", "Land", "Telefonnummer", "Email", "Rejsebureau", "CheckIn", "Nætter"
+                "GæstID", "BookingID", "Fornavn(e)", "Efternavn", "Land", "Telefonnummer", "Email", "Rejsebureau", "CheckIn", "Check Ud", "Nætter"
             }
         )
         {
             boolean[] canEdit = new boolean []
             {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex)
@@ -125,8 +125,6 @@ public class GUI extends javax.swing.JFrame
                 jButtonGetGuestListActionPerformed(evt);
             }
         });
-
-        jLabelInfoOversigt.setText("asdf");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -299,7 +297,7 @@ public class GUI extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -331,6 +329,7 @@ public class GUI extends javax.swing.JFrame
                 g.getEmail(),
                 g.getRejsebureau(),
                 g.getCheckin(),
+                g.getCheckud(),
                 g.getNætter()});
         }
         
@@ -350,7 +349,7 @@ public class GUI extends javax.swing.JFrame
 //     jTextFieldLand.getText();
 //     jTextFieldEmail.getText();
 //     jTextfieldAntalnætter.getText();
-     Gæst g = c.createNewBooking(12, 13, jTextFieldFornavn.getText(), jTextFieldEfternavn.getText(), jTextFieldLand.getText(), tlfno, jTextFieldEmail.getText(), null, null, antnæ);
+        Gæst status = c.createNewBooking(count, count, jTextFieldFornavn.getText(), jTextFieldEfternavn.getText(), jTextFieldLand.getText(), tlfno, jTextFieldEmail.getText(), null, null,null, antnæ);
     }//GEN-LAST:event_jButtonBekræftBookingActionPerformed
 
     private void jTextFieldFornavnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextFieldFornavnActionPerformed

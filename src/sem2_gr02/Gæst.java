@@ -24,9 +24,10 @@ public class Gæst
     private String email;
     private String checkin;
     private List<Gæst> gæsteListe;
+    private String Checkud;
 
     
-    public Gæst(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkda, int antnæ)
+    public Gæst(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkind,String checkud, int antnæ)
     { 
         
         gæstid = gæid;
@@ -39,10 +40,21 @@ public class Gæst
         rejsebureau = rbu;
         nætter = antnæ;
         email = eail;
-        checkin = checkda;
+        checkin = checkind;
         gæsteListe = new ArrayList<Gæst>();
+        Checkud = checkud;
         
         
+    }
+
+    public String getCheckud()
+    {
+        return Checkud;
+    }
+
+    public void setCheckud(String Checkud)
+    {
+        this.Checkud = Checkud;
     }
 
 
@@ -183,6 +195,10 @@ public class Gæst
 //	    }
 //	    return res;
 //	  } 
+
+
+
+
     
     
 }

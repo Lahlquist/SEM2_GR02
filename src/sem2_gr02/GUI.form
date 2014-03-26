@@ -73,7 +73,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" pref="911" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -146,7 +146,7 @@
                 <Component class="javax.swing.JTable" name="G&#xe6;steListen">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="10" rowCount="0">
+                      <Table columnCount="11" rowCount="0">
                         <Column editable="false" title="G&#xe6;stID" type="java.lang.Object"/>
                         <Column editable="false" title="BookingID" type="java.lang.Object"/>
                         <Column editable="false" title="Fornavn(e)" type="java.lang.Object"/>
@@ -156,6 +156,7 @@
                         <Column editable="false" title="Email" type="java.lang.Object"/>
                         <Column editable="false" title="Rejsebureau" type="java.lang.Object"/>
                         <Column editable="false" title="CheckIn" type="java.lang.Object"/>
+                        <Column editable="false" title="Check Ud" type="java.lang.Object"/>
                         <Column editable="false" title="N&#xe6;tter" type="java.lang.Object"/>
                       </Table>
                     </Property>
@@ -172,9 +173,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelInfoOversigt">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="asdf"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
