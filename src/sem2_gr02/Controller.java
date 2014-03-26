@@ -28,6 +28,11 @@ public class Controller
         return currentgListe;
     }
     
+    public Booking createNewBooking(String fnavn, String enavn, String land, String email, int tlfno, int nætter)
+    {
+        return null; 
+    }
+    
 //    public String getGæsteListeToString() {
 //    if (currentgListe != null) {
 //      return "";//currentgListe.detailsToString();
