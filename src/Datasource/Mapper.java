@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 
 import sem2_gr02.Gæst;
+import sem2_gr02.Lejlighed;
 
 /**
  *
@@ -44,18 +45,18 @@ public class Mapper
 
             while (rs.next())
             {
-                int gæid = rs.getInt("GAEST_ID");
-                int boid = rs.getInt("BOOKING_ID");
+                String gaeid = rs.getString("GAEST_ID");
                 String fnavn = rs.getString("FORNAVN_E");
                 String enavn = rs.getString("EFTERNAVN");
-                String land = rs.getString("LAND");
                 int telnu = rs.getInt("TELEFONNUMMER");
-                String email = rs.getString("E_MAIL");
+                String mail = rs.getString("E_MAIL");
+                String vnavn = rs.getString("VEJNAVN");
+                int vno = rs.getInt("VEJNUMMER");
+                int pno = rs.getInt("POSTNUMMER");
+                String bnavn = rs.getString("BYNAVN");
+                String land = rs.getString("LAND");
                 String rbu = rs.getString("REJSEBUREAU");
-                String checkind = rs.getString("CHECK_IN_DATO");
-                String checkud = rs.getString("CHECK_OUT_DATO");
-                int antnæ = rs.getInt("ANTAL_NAETTER");
-                gæsteListe.add(new Gæst(gæid, boid, fnavn, enavn, land, telnu, email, rbu, checkind, checkud, antnæ));
+                gæsteListe.add(new Gæst(gaeid,fnavn,enavn,telnu,mail,vnavn,vno,pno,bnavn,land,rbu));
 //          Gæsteliste.addRow(new Object[]{t1,t2,t3,t4,t5,t6,t7,t8,t9,t10});
 
             }
@@ -93,17 +94,17 @@ public class Mapper
         try
         {
             statement = con.prepareStatement(SQLStringGæst);
-            statement.setInt(1, 213322);
-            statement.setInt(2, 202020);
-            statement.setString(3, g.getFornavn());
-            statement.setString(4, g.getEfternavn());
-            statement.setString(5, g.getLand());
-            statement.setInt(6, g.getTelefonnummer());
-            statement.setString(7, g.getEmail());
-            statement.setString(8, "wer");
-            statement.setDate(9, null);
-            statement.setDate(10, null);
-            statement.setInt(11, g.getNætter());
+            statement.setInt(1, 1413212);
+            statement.setString(2,g.getFornavn() );
+            statement.setString(3, g.getEfternavn());
+            statement.setInt(4, g.getTelefonnummer());
+            statement.setString(5, g.getEmail());
+            statement.setString(6, g.getVejnavn());
+            statement.setInt(7, g.getVejnummer());
+            statement.setInt(8, g.getPostnummer());
+            statement.setString(9, g.getBynavn());
+            statement.setString(10, g.getLand());
+            statement.setString(11, g.getRejsebureau());
             rowsInserted = statement.executeUpdate();
 
 //            statement = con.prepareStatement(SQLStringLejlighed);
@@ -124,5 +125,10 @@ public class Mapper
             }
         }
         return rowsInserted == 1;
+    }
+
+    public List<Lejlighed> getLejlighedsliste()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

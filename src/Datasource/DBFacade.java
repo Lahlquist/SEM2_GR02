@@ -26,11 +26,21 @@ public class DBFacade
     {
         return mapp.createNewBooking(g);
     }
+    
+    public List<Lejlighed> getLejlighedliste()
+    {
+        return mapp.getLejlighedsliste();
+    }
 //    
 //    public Gæst getGæst()
 //    {
 //        return mapp.getGæste();
 //    }
+
+    public List<Lejlighed> getLejlighedsliste()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 }

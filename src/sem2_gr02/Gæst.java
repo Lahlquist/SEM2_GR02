@@ -12,60 +12,91 @@ import java.util.List;
  */
 public class Gæst
 {
+    private String gaestid;
     private String fornavn;
     private String efternavn;
-    private String adresse;
-    private String Land;
     private int telefonnummer;
-    private String rejsebureau;
-    private int bookingid;
-    private int gæstid;
-    private int nætter;
     private String email;
-    private String checkin;
+    private String vejnavn;
+    private int vejnummer;
+    private int postnummer;
+    private String bynavn;
+    private String Land;
+    private String rejsebureau;
     private List<Gæst> gæsteListe;
-    private String Checkud;
+
 
     
-    public Gæst(int gæid, int boid, String fnavn, String enavn, String land, int telnu, String eail, String rbu, String checkind,String checkud, int antnæ)
+    public Gæst(String gaeid, String fnavn, String enavn, int telnu, String mail, String vnavn, int vno, int pno, String bnavn, String land, String rbu)
     { 
-        
-        gæstid = gæid;
-        bookingid = boid;
+        gaestid = gaeid;
         fornavn = fnavn;
         efternavn = enavn;
-//        adresse = addr;
-        Land = land;
         telefonnummer = telnu;
+        email = mail;
+        vejnavn = vnavn;
+        vejnummer = vno;
+        postnummer = pno;
+        bynavn = bnavn;
+        Land = land;
         rejsebureau = rbu;
-        nætter = antnæ;
-        email = eail;
-        checkin = checkind;
+        
         gæsteListe = new ArrayList<Gæst>();
-        Checkud = checkud;
+
         
         
     }
 
-    public String getCheckud()
+
+    public String getGaestid()
     {
-        return Checkud;
+        return gaestid;
     }
 
-    public void setCheckud(String Checkud)
+    public void setGaestid(String gaestid)
     {
-        this.Checkud = Checkud;
+        this.gaestid = gaestid;
     }
 
+    public String getVejnavn()
+    {
+        return vejnavn;
+    }
 
+    public void setVejnavn(String vejnavn)
+    {
+        this.vejnavn = vejnavn;
+    }
 
+    public int getVejnummer()
+    {
+        return vejnummer;
+    }
 
+    public void setVejnummer(int vejnummer)
+    {
+        this.vejnummer = vejnummer;
+    }
 
+    public int getPostnummer()
+    {
+        return postnummer;
+    }
 
-//    GæsteListe()
-//    {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+    public void setPostnummer(int postnummer)
+    {
+        this.postnummer = postnummer;
+    }
+
+    public String getBynavn()
+    {
+        return bynavn;
+    }
+
+    public void setBynavn(String bynavn)
+    {
+        this.bynavn = bynavn;
+    }
 
     public String getFornavn()
     {
@@ -86,16 +117,6 @@ public class Gæst
     {
         this.efternavn = efternavn;
     }
-
-//    public String getAdresse()
-//    {
-//        return adresse;
-//    }
-//
-//    public void setAdresse(String adresse)
-//    {
-//        this.adresse = adresse;
-//    }
 
     public String getLand()
     {
@@ -127,36 +148,6 @@ public class Gæst
         this.rejsebureau = rejsebureau;
     }
 
-    public int getBookingid()
-    {
-        return bookingid;
-    }
-
-    public void setBookingid(int bookingid)
-    {
-        this.bookingid = bookingid;
-    }
-
-    public int getGæstid()
-    {
-        return gæstid;
-    }
-
-    public void setGæstid(int gæstid)
-    {
-        this.gæstid = gæstid;
-    }
-
-    public int getNætter()
-    {
-        return nætter;
-    }
-
-    public void setNætter(int nætter)
-    {
-        this.nætter = nætter;
-    }
-
     public String getEmail()
     {
         return email;
@@ -167,15 +158,6 @@ public class Gæst
         this.email = email;
     }
 
-    public String getCheckin()
-    {
-        return checkin;
-    }
-
-    public void setCheckin(String checkin)
-    {
-        this.checkin = checkin;
-    }
 
     public void addGæst(Gæst gl)
     {
@@ -183,7 +165,8 @@ public class Gæst
     }
     public String tostring()
     {
-        return fornavn + "" + efternavn+ "" + adresse + "" + Land + "" +  telefonnummer + "" + rejsebureau+ "" + bookingid + "" + gæstid + "" +nætter + "" + email+ "" +checkin;
+        return gaestid + "" + fornavn + "" + efternavn + "" + telefonnummer + "" + email + "" + vejnavn + "" + vejnummer + "" + postnummer + "" + bynavn + "" + Land + "" + rejsebureau;
+       // return fornavn + "" + efternavn+ "" +  + "" + Land + "" +  telefonnummer + "" + rejsebureau+ "" + bookingid + "" + gæstid + "" +nætter + "" + email+ "" +checkin;
     }
 
 //        String detailsToString()
