@@ -86,7 +86,7 @@ public class Mapper
     {
         int rowsInserted = 0;
         String SQLStringGæst = "insert into GAEST_TBL "
-                + " values (?,?,?,?,?,?,?,?,?,?,?);";
+                + " values (?,?,?,?,?,?,?,?,?,?,?)";
 //        String SQLStringLejlighed = "insert into LEJLIGHED_TBL "
 //                + " values (?,?,?)";
         PreparedStatement statement = null;
@@ -94,7 +94,7 @@ public class Mapper
         {
             statement = con.prepareStatement(SQLStringGæst);
             statement.setInt(1, 213322);
-            statement.setInt(2, 453123);
+            statement.setInt(2, 202020);
             statement.setString(3, g.getFornavn());
             statement.setString(4, g.getEfternavn());
             statement.setString(5, g.getLand());
@@ -112,6 +112,7 @@ public class Mapper
         } catch (SQLException e)
         {
             System.out.println("Fejler i mapper - Create New Booking før close");
+            System.out.println(e.getMessage());
         } finally
         {
             try
