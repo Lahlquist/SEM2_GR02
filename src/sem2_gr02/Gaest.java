@@ -37,7 +37,7 @@ public class Gaest
         Land = land;
         rejsebureau = rbu;
         
-        gæsteListe = new ArrayList<Gæst>();
+        gæsteListe = new ArrayList<Gaest>();
 
         
         
@@ -155,7 +155,7 @@ public class Gaest
     }
 
 
-    public void addGæst(Gæst gl)
+    public void addGæst(Gaest gl)
     {
         gæsteListe.add(gl);
     }
