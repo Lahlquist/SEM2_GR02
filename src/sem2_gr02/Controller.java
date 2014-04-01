@@ -1,58 +1,65 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sem2_gr02;
 
 import Datasource.*;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Emilos
- */
 public class Controller
 {
 
     DBFacade facade = new DBFacade();
     private List<Gaest> currentgListe;
     private List<Lejlighed> currentlListe;
-    private Gaest gaest;
+    private Gaest gæst;
+    //TEST
+    private ArrayList<Booking> currentARListe;
 
     public Controller()
     {
         currentgListe = null;
         currentlListe = null;
-        gaest = null;
+        gæst = null;
+       
+        //TEST
+        currentARListe = null;
+        
     }
 
-    public List<Gaest> getGaesteListe()
+    public List<Gaest> getGæsteListe()
     {
-        currentgListe = facade.getGaesteListe();
+        currentgListe = facade.getGæsteListe();
         return currentgListe;
     }
 
     public Gaest createNewBooking(String gaeid, String fnavn, String enavn, int telnu, String mail, String vnavn, int vno, int pno, String bnavn, String land, String rbu)
     {
-        gaest = new Gaest(gaeid, fnavn, enavn, telnu, mail, vnavn, vno, pno, bnavn, land, rbu);
-        boolean status = facade.createNewBooking(gaest);
+        gæst = new Gaest(gaeid, fnavn, enavn, telnu, mail, vnavn, vno, pno, bnavn, land, rbu);
+        boolean status = facade.createNewBooking(gæst);
         if (!status);
         {
-            gaest = null;
+            gæst = null;
         }
-        return gaest;
+        return gæst;
     }
     
     public List<Lejlighed> getLejlighedliste()
     {
-        currentlListe= facade.getLejlighedsliste();
+        currentlListe = facade.getLejlighedsliste();
         return currentlListe;
     }
-//    public String getGæsteListeToString() {
-//    if (currentgListe != null) {
-//      return "";//currentgListe.detailsToString();
-//    } else {
-//      return null;
-//    }
-//  }
+
+    // ANDERS - NYT
+    
+    
+    // antal lejligheder ledige i given periode.
+    public int getRoomsList(String x, String y) {
+        currentARListe = facade.getRoomsList(x,y);
+        int rooms = currentARListe.size();
+        
+        return rooms;
+    }
+    
+    
+    
 }

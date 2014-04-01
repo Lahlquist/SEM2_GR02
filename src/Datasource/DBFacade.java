@@ -1,14 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Datasource;
+import java.util.ArrayList;
 import java.util.List;
 import sem2_gr02.*;
-/**
- *
- * @author Emilos
- */
+
+
 public class DBFacade
 {
     private final Mapper mapp;
@@ -17,9 +13,9 @@ public class DBFacade
         mapp = new Mapper(DBConnector.getConnection());
     }
     
-    public List<Gaest> getGaesteListe()
+    public List<Gaest> getGæsteListe()
     {
-        return mapp.getGaester();
+        return mapp.getGæster();
     }
     
     public boolean createNewBooking(Gaest g)
@@ -31,16 +27,16 @@ public class DBFacade
     {
         return mapp.getLejlighedsliste();
     }
-//    
-//    public Gæst getGæst()
-//    {
-//        return mapp.getGæste();
-//    }
+    
 
     public List<Lejlighed> getLejlighedsliste()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
+    // ANDERS - NYT 
+    
+    public ArrayList<Booking> getRoomsList(String x, String y) {
+        return mapp.getRooms(x, y);
+    }
 }
