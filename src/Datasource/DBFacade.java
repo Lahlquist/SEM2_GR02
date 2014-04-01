@@ -17,12 +17,12 @@ public class DBFacade
         mapp = new Mapper(DBConnector.getConnection());
     }
     
-    public List<Gæst> getGæsteListe()
+    public List<Gaest> getGaesteListe()
     {
-        return mapp.getGæster();
+        return mapp.getGaester();
     }
     
-    public boolean createNewBooking(Gæst g)
+    public boolean createNewBooking(Gaest g)
     {
         return mapp.createNewBooking(g);
     }

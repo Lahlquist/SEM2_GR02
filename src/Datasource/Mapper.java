@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 
-import sem2_gr02.Gæst;
+import sem2_gr02.Gaest;
 import sem2_gr02.Lejlighed;
 
 /**
@@ -31,13 +31,13 @@ public class Mapper
     }
 
     //public List<Gæst> getGæster()
-    public List<Gæst> getGæster()
+    public List<Gaest> getGaester()
     {
-        Gæst gl = null;
+        Gaest gl = null;
         String SQLString =
                 " select * from GAEST_TBL";
         PreparedStatement statement = null;
-        List<Gæst> gæsteListe = new ArrayList<>();
+        List<Gaest> gæsteListe = new ArrayList<>();
         try
         {
             statement = con.prepareStatement(SQLString);
@@ -56,7 +56,7 @@ public class Mapper
                 String bnavn = rs.getString("BYNAVN");
                 String land = rs.getString("LAND");
                 String rbu = rs.getString("REJSEBUREAU");
-                gæsteListe.add(new Gæst(gaeid,fnavn,enavn,telnu,mail,vnavn,vno,pno,bnavn,land,rbu));
+                gæsteListe.add(new Gaest(gaeid,fnavn,enavn,telnu,mail,vnavn,vno,pno,bnavn,land,rbu));
 //          Gæsteliste.addRow(new Object[]{t1,t2,t3,t4,t5,t6,t7,t8,t9,t10});
 
             }
@@ -83,7 +83,7 @@ public class Mapper
     }
     
     
-        public boolean createNewBooking(Gæst g)
+        public boolean createNewBooking(Gaest g)
     {
         int rowsInserted = 0;
         String SQLStringGæst = "insert into GAEST_TBL "

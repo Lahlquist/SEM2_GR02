@@ -459,8 +459,8 @@ public class GUI extends javax.swing.JFrame
         
         jLabelInfoOversigt.setText("Oversigt hentet!");
         DefaultTableModel Gæsteliste =(DefaultTableModel)GæsteListen.getModel();
-        List<Gæst> gæsteListe = c.getGæsteListe();
-        for(Gæst g : gæsteListe)
+        List<Gaest> gaesteListe = c.getGaesteListe();
+        for(Gaest g : gaesteListe)
         {
             Gæsteliste.addRow(new Object[]{
                 g.getGaestid(),
@@ -496,7 +496,7 @@ public class GUI extends javax.swing.JFrame
         //     jTextFieldLand.getText();
         //     jTextFieldEmail.getText();
         //     jTextfieldAntalnætter.getText();
-        Gæst status = c.createNewBooking(null, jTextFieldFornavn.getText(), jTextFieldEfternavn.getText(), tlfno, jTextFieldEmail.getText(), jTextfieldVejnavn.getText(), vno, pno, jTextfieldBynavn.getText(), jTextFieldLand.getText(), jTextfieldRejsebureau.getText());
+        Gaest status = c.createNewBooking(null, jTextFieldFornavn.getText(), jTextFieldEfternavn.getText(), tlfno, jTextFieldEmail.getText(), jTextfieldVejnavn.getText(), vno, pno, jTextfieldBynavn.getText(), jTextFieldLand.getText(), jTextfieldRejsebureau.getText());
         jLabelInfo.setText("Gæst Oprettet!") ;
     }//GEN-LAST:event_jButtonBekræftBookingActionPerformed
 

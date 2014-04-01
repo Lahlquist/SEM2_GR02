@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Emilos
  */
-public class Gæst// lalalalala
+public class Gaest// lalalalala
 {
     private String gaestid;
     private String fornavn;
@@ -23,11 +23,11 @@ public class Gæst// lalalalala
     private String bynavn;
     private String Land;
     private String rejsebureau;
-    private List<Gæst> gæsteListe;
+    private List<Gaest> gæsteListe;
 
 
     
-    public Gæst(String gaeid, String fnavn, String enavn, int telnu, String mail, String vnavn, int vno, int pno, String bnavn, String land, String rbu)
+    public Gaest(String gaeid, String fnavn, String enavn, int telnu, String mail, String vnavn, int vno, int pno, String bnavn, String land, String rbu)
     { 
         gaestid = gaeid;
         fornavn = fnavn;
@@ -41,7 +41,7 @@ public class Gæst// lalalalala
         Land = land;
         rejsebureau = rbu;
         
-        gæsteListe = new ArrayList<Gæst>();
+        gæsteListe = new ArrayList<Gaest>();
 
         
         
@@ -159,7 +159,7 @@ public class Gæst// lalalalala
     }
 
 
-    public void addGæst(Gæst gl)
+    public void addGæst(Gaest gl)
     {
         gæsteListe.add(gl);
     }
