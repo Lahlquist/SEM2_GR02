@@ -26,7 +26,7 @@ public class Controller
         
     }
 
-    public List<Gaest> getGæsteListe()
+    public List<Gaest> getGaesteListe()
     {
         currentgListe = facade.getGæsteListe();
         return currentgListe;
