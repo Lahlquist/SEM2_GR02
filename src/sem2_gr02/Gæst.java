@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Emilos
  */
-public class Gæst
+public class Gæst// lalalalala
 {
     private String gaestid;
     private String fornavn;
