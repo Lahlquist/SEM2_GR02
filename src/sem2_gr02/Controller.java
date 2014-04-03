@@ -11,7 +11,7 @@ public class Controller
     DBFacade facade = new DBFacade();
     private List<Gaest> currentgListe;
     private List<Lejlighed> currentlListe;
-    private Gaest gæst;
+    private Gaest gaest;
     //TEST
     private ArrayList<Booking> currentARListe;
 
@@ -19,7 +19,7 @@ public class Controller
     {
         currentgListe = null;
         currentlListe = null;
-        gæst = null;
+        gaest = null;
        
         //TEST
         currentARListe = null;
@@ -28,19 +28,19 @@ public class Controller
 
     public List<Gaest> getGaesteListe()
     {
-        currentgListe = facade.getGæsteListe();
+        currentgListe = facade.getGaesteListe();
         return currentgListe;
     }
 
     public Gaest createNewBooking(String gaeid, String fnavn, String enavn, int telnu, String mail, String vnavn, int vno, int pno, String bnavn, String land, String rbu)
     {
-        gæst = new Gaest(gaeid, fnavn, enavn, telnu, mail, vnavn, vno, pno, bnavn, land, rbu);
-        boolean status = facade.createNewBooking(gæst);
+        gaest = new Gaest(gaeid, fnavn, enavn, telnu, mail, vnavn, vno, pno, bnavn, land, rbu);
+        boolean status = facade.createNewBooking(gaest);
         if (!status);
         {
-            gæst = null;
+            gaest = null;
         }
-        return gæst;
+        return gaest;
     }
     
     public List<Lejlighed> getLejlighedliste()

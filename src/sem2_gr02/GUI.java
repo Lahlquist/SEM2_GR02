@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GUI extends javax.swing.JFrame
 {
-//public GæsteListe gl = new GæsteListe();
+//public GaesteListe gl = new GaesteListe();
     /**
      * Creates new form GUI
      */
@@ -448,11 +448,11 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButtonGetGuestListActionPerformed
         
         jLabelInfoOversigt.setText("Oversigt hentet!");
-        DefaultTableModel Gæsteliste =(DefaultTableModel)GæsteListen.getModel();
+        DefaultTableModel Gaesteliste =(DefaultTableModel)GaesteListen.getModel();
         List<Gaest> gaesteListe = c.getGaesteListe();
         for(Gaest g : gaesteListe)
         {
-            Gæsteliste.addRow(new Object[]{
+            Gaesteliste.addRow(new Object[]{
                 g.getGaestid(),
                 g.getFornavn(),
                 g.getEfternavn(),

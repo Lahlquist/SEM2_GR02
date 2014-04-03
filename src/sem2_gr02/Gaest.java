@@ -168,9 +168,9 @@ public class Gaest
 //        String detailsToString()
 //	  {
 //	    String res = "";
-//	    for (int i = 0; i < gæsteListe.size(); i++) 
+//	    for (int i = 0; i < gaesteListe.size(); i++) 
 //	    {
-//	      res += gæsteListe.get(i).toString() + "\n";
+//	      res += gaesteListe.get(i).toString() + "\n";
 //	    }
 //	    return res;
 //	  } 
@@ -181,7 +181,7 @@ public class Gaest
     
     
 }
-////gæst_id NUMBER(6),
+////gaest_id NUMBER(6),
 ////booking_id NUMBER(6),
 ////fornavn(e) VARCHAR2(60),
 ////efternavn VARCHAR2(30),
@@ -191,5 +191,5 @@ public class Gaest
 ////e-mail
 ////rejsebureau
 ////check_in_dato
-////antal_nætter
+////antal_naetter
 ////);

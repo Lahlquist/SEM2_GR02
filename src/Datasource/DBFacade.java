@@ -13,9 +13,9 @@ public class DBFacade
         mapp = new Mapper(DBConnector.getConnection());
     }
     
-    public List<Gaest> getGæsteListe()
+    public List<Gaest> getGaesteListe()
     {
-        return mapp.getGæster();
+        return mapp.getGaester();
     }
     
     public boolean createNewBooking(Gaest g)

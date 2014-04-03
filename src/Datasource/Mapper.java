@@ -27,13 +27,13 @@ public class Mapper
 
     
     
-    public List<Gaest> getGæster()
+    public List<Gaest> getGaester()
     {
         Gaest gl = null;
         String SQLString =
                 " select * from GAEST_TBL";
         PreparedStatement statement = null;
-        List<Gaest> gæsteListe = new ArrayList<>();
+        List<Gaest> gaesteListe = new ArrayList<>();
         try
         {
             statement = con.prepareStatement(SQLString);
@@ -53,7 +53,7 @@ public class Mapper
                 String land  = rs.getString("LAND");
                 String rbu   = rs.getString("REJSEBUREAU");
                 
-                gæsteListe.add(new Gaest(gaeid,fnavn,enavn,telnu,mail,vnavn,vno,pno,bnavn,land,rbu));
+                gaesteListe.add(new Gaest(gaeid,fnavn,enavn,telnu,mail,vnavn,vno,pno,bnavn,land,rbu));
             }
 
         } catch (SQLException e)
@@ -74,7 +74,7 @@ public class Mapper
                 System.out.println(e.getMessage());
             }
         }
-        return gæsteListe;
+        return gaesteListe;
     }
     
     
