@@ -49,4 +49,8 @@ public class DBFacade
     public ArrayList<Booking> getRoomsList(String x, String y) {
         return mapp.getRooms(x, y);
     }
+    
+    public boolean tjekLogind(String brugernavn, String kode){
+        return (mapp.tjekLogind(brugernavn, kode));
+    }
 }

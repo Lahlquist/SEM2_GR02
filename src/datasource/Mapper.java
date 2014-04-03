@@ -270,5 +270,44 @@ public class Mapper
         return lejlighedsNR;
     }
     
+    public boolean tjekLogind(String brugernavn, String kode) {
+        boolean tjek = false;
+        
+        ResultSet rs = null;
+        PreparedStatement pst = null;
+       
+        String SQLString1 =
+                "SELECT * from BRUGER_LOGIN_TBL WHERE BRUGERNAVN=? AND KODEORD=?";
+        try{
+        pst = con.prepareStatement(SQLString1);
+        pst.setString(1, brugernavn);
+        pst.setString(2, kode);
+        
+        rs = pst.executeQuery();
+        if(rs.next()){
+            tjek = true;
+        }
+        }
+        catch (SQLException e) {
+            System.out.println("Fail in OrderMapper - getOrder");
+            System.out.println(e.getMessage());
+        } 
+        
+        finally {
+            
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+            } 
+            catch (SQLException e) {
+                System.out.println("Fail in OrderMapper - getOrder");
+                System.out.println(e.getMessage());
+          }
+        }
+        
+        return tjek;
+        
+    }
     
 }

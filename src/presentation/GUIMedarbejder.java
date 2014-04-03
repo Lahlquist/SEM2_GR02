@@ -1,26 +1,26 @@
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package presentation;
+
 import domain.Controller;
 import domain.Gaest;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+
 /**
- *
- * @author Emilos
+ * Semesterprojekt - "Casablanca Holiday Center"
+ * 2. semester 2014
+ * 
+ * Udarbejdet af:
+ * Emil, Anders, Søren og Laura
+ * 
+ * Torsdag den 1. maj 2014 #Part 1
  */
-public class GUI extends javax.swing.JFrame
+
+public class GUIMedarbejder extends javax.swing.JFrame
 {
 //public GaesteListe gl = new GaesteListe();
-    /**
-     * Creates new form GUI
-     */
     private Controller c = new Controller();
     int count = 0;
-    public GUI()
+    public GUIMedarbejder()
     {
         initComponents();
     }
@@ -524,16 +524,16 @@ public class GUI extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIMedarbejder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIMedarbejder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIMedarbejder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIMedarbejder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -543,7 +543,7 @@ public class GUI extends javax.swing.JFrame
             @Override
             public void run()
             {
-                new GUI().setVisible(true);
+                new GUIMedarbejder().setVisible(true);
             }
         });
     }

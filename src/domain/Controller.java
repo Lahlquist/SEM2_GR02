@@ -69,6 +69,8 @@ public class Controller
         return rooms;
     }
     
-    
+    public boolean tjekLogind(String brugernavn, String kode){
+        return (facade.tjekLogind(brugernavn, kode));
+    }
     
 }
