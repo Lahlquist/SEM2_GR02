@@ -43,7 +43,7 @@ public class GUI extends javax.swing.JFrame
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        GæsteListen = new javax.swing.JTable();
+        GaesteListen = new javax.swing.JTable();
         jButtonGetGuestList = new javax.swing.JButton();
         jLabelInfoOversigt = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -107,7 +107,7 @@ public class GUI extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        GæsteListen.setModel(new javax.swing.table.DefaultTableModel(
+        GaesteListen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
 
@@ -128,7 +128,7 @@ public class GUI extends javax.swing.JFrame
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(GæsteListen);
+        jScrollPane3.setViewportView(GaesteListen);
 
         jButtonGetGuestList.setText("Hent Gæsteliste");
         jButtonGetGuestList.addActionListener(new java.awt.event.ActionListener()
@@ -546,7 +546,7 @@ public class GUI extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable GæsteListen;
+    private javax.swing.JTable GaesteListen;
     private javax.swing.JButton jButtonBekræftBooking;
     private javax.swing.JButton jButtonCheckudsigt;
     private javax.swing.JButton jButtonGetGuestList;
