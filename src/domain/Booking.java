@@ -1,4 +1,4 @@
-package sem2_gr02;
+package domain;
 
 
 public class Booking

@@ -3,7 +3,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package sem2_gr02;
+package presentation;
+import domain.Controller;
+import domain.Gaest;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 /**

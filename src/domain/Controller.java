@@ -1,7 +1,7 @@
 
-package sem2_gr02;
+package domain;
 
-import Datasource.*;
+import dataSource.DBFacade;
 import java.util.ArrayList;
 import java.util.List;
 

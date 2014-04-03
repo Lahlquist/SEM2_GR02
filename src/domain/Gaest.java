@@ -1,5 +1,5 @@
 
-package sem2_gr02;
+package domain;
 
 import java.util.ArrayList;
 import java.util.List;
