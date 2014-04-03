@@ -10,10 +10,7 @@ package domain;
  * Torsdag den 1. maj 2014 #Part 1
  */
 
-public class SEM2_GR02
+public class Sportsfaciliteter
 {
-    public static void main(String[] args)
-    {
-        
-    }
+    
 }
