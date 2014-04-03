@@ -90,14 +90,37 @@ public class Mapper
     {
         int rowsInserted = 0;
         String SQLStringGæst = "insert into GAEST_TBL "
-                + "values (?,?,?,?,?,?,?,?,?,?,?)";
-        
+                + " values (?,?,?,?,?,?,?,?,?,?,?)";
+//        String oldgid = "select GAEST_ID from GAEST_TBL";
+//        String nygid = oldgid.substring(1);
+//        int nynr = Integer.parseInt(nygid);
+//        nygid = "G"+(nynr+1);
+//        String SQLStringLejlighed = "insert into LEJLIGHED_TBL "
+//                + " values (?,?,?)";
         PreparedStatement statement = null;
         try
         {
+            String selectgid = "select MAX(GAEST_ID) from GAEST_TBL";
+            
+            statement = con.prepareStatement(selectgid);
+            ResultSet rs = statement.executeQuery();
+            String oldgid = null;
+            if (rs.next()){
+                oldgid = rs.getString(1);
+                System.out.println(oldgid);
+            }
+            // Husk fejl besked hvis gæstID ikke fundet.
+            try {
+            String nygid = oldgid.substring(1);
+            System.out.println(nygid); // Print
+            int nynr = Integer.parseInt(nygid);
+            System.out.println(nynr); // Print
+            String nyrgid = "G" + (nynr + 1);
+            System.out.println(nyrgid); // Print
+            
             statement = con.prepareStatement(SQLStringGæst);
-            statement.setInt(1, 1413212);
-            statement.setString(2,g.getFornavn() );
+            statement.setString(1, nyrgid);
+            statement.setString(2, g.getFornavn());
             statement.setString(3, g.getEfternavn());
             statement.setInt(4, g.getTelefonnummer());
             statement.setString(5, g.getEmail());
@@ -108,6 +131,13 @@ public class Mapper
             statement.setString(10, g.getLand());
             statement.setString(11, g.getRejsebureau());
             rowsInserted = statement.executeUpdate();
+            }
+            catch (SQLException e)
+            {
+                System.out.println("Fejler i mapper - Create New Booking før close");
+            }
+//            statement = con.prepareStatement(SQLStringLejlighed);
+//            statement.set
 
         } catch (SQLException e)
         {
