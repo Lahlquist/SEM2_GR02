@@ -1,5 +1,5 @@
 
-package dataource;
+package datasource;
 import domain.Lejlighed;
 import domain.Booking;
 import domain.Gaest;
